@@ -1,0 +1,165 @@
+:root {
+  --color-neutral-50: oklch(95% 0% 0);
+  --color-neutral-500: oklch(50% 0% 0);
+  --color-neutral-800: oklch(20% 0% 0);
+}
+
+html {
+  font-family: sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-rows: 1fr;
+  min-height: 100vh;
+
+  background-color: var(--color-neutral-800);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-controls {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+
+  width: min(100%, 1024px);
+
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .user-controls {
+    grid-template-columns: 1fr;
+  }
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  background-color: var(--color-neutral-800);
+  color: var(--color-neutral-50);
+
+  border: 1px solid var(--color-neutral-500);
+  border-radius: 8px;
+
+  transition: all 0.2s ease-out;
+}
+
+.btn:hover,
+.btn:focus {
+  border-color: var(--color-neutral-50);
+  scale: 1.02;
+}
+
+.btn:active {
+  scale: 0.98;
+}
+
+.user-controls__btn {
+  padding-block: 2rem;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  color: var(--color-neutral-50);
+}
+
+.score {
+  display: flex;
+  align-items: center;
+
+  gap: 2rem;
+  font-size: 2rem;
+  color: var(--color-neutral-50);
+}
+
+.score .icon {
+  width: 48px;
+  height: 48px;
+}
+
+.score__block {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.separator::before {
+  content: ":";
+}
+
+.battle-log {
+  display: flex;
+  gap: 1rem;
+  color: var(--color-neutral-50);
+}
+
+.battle-log__user-choice,
+.battle-log__bot-choice {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.win-modal[open] {
+  display: grid;
+
+  margin: auto;
+  inset: 0;
+
+  width: min(90vw, 680px);
+  min-height: 360px;
+  border-radius: 1rem;
+  padding: 2rem;
+
+  background-color: var(--color-neutral-800);
+  border: 1px solid var(--color-neutral-500);
+
+  color: var(--color-neutral-50);
+}
+
+.win-modal::backdrop {
+  background-color: oklch(0% 0% 0 / 40%);
+}
+
+.win-modal__content {
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  gap: 2rem;
+}
+
+.win-modal__title {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.win-modal__btn {
+  padding-block: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}

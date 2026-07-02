@@ -5,6 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <body></body>
+  <body>
+    <main class="main">
+      <div class="score">
+        <div class="score__block">
+          <svg class="icon">
+            <use href="./assets/icons/icons.svg#user"></use>
+          </svg>
+          <span id="user-score">0</span>
+        </div>
+        <div class="separator"></div>
+        <div class="score__block">
+          <span id="bot-score">0</span>
+          <svg class="icon">
+            <use href="./assets/icons/icons.svg#bot"></use>
+          </svg>
+        </div>
+      </div>
+      <div class="battle-log">
+        <span class="battle-log__user-choice"></span>
+        <span>vs</span>
+        <span class="battle-log__bot-choice"></span>
+      </div>
+      <div class="user-controls">
+        <button class="btn user-controls__btn" value="rock" aria-label="Rock">
+          <svg class="icon">
+            <use href="./assets/icons/icons.svg#rock"></use>
+          </svg>
+        </button>
+        <button class="btn user-controls__btn" value="paper" aria-label="Paper">
+          <svg class="icon">
+            <use href="./assets/icons/icons.svg#paper"></use>
+          </svg>
+        </button>
+        <button
+          class="btn user-controls__btn"
+          value="scissors"
+          aria-label="Scissors"
+        >
+          <svg class="icon">
+            <use href="./assets/icons/icons.svg#scissors"></use>
+          </svg>
+        </button>
+      </div>
+    </main>
+
+    <dialog class="win-modal">
+      <div class="win-modal__content">
+        <p class="win-modal__title"></p>
+        <p class="win-modal__subtitle"></p>
+        <button class="btn win-modal__btn restart-btn">restart game</button>
+      </div>
+    </dialog>
+  </body>
 </html>
